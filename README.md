@@ -9,7 +9,7 @@ Basic functions to validate bitcoin input text fields
 
     $(function(){
 
-        setupBitcoinInput(); //adds validation filter on all inputs that "are" btc_amount class
+        setupBitcoinInput(); //adds validation filter on all inputs that "are" am_btc_input class
 
 
         $('#bt_check_input').click(function(){
