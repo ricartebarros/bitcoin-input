@@ -1,11 +1,11 @@
 # bitcoin-input
 Basic functions to validate bitcoin input text fields
 
-
+```html
 <input type="text" value="" class="am_btc_input" id="btc_amount" required placeholder="" >
 <br />
 <input type="button" value="Check BTC input" id="bt_check_input" />
-
+```
 
     $(function(){
 
