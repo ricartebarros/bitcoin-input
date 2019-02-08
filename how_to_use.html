@@ -25,7 +25,7 @@
 
     $(function(){
 
-        setupBitcoinInput();
+        setupBitcoinInput(); //adds validation filter on all inputs that "are" btc_amount class
 
 
         $('#bt_check_input').click(function(){
@@ -35,11 +35,11 @@
             let btcValidationObj = validateBitcoinInputValue(btc_amount);
 
             if( btcValidationObj.resultCode!=0 ){
-                console.log( btcValidationObj.resultMsg );
+                console.log( btcValidationObj.resultMsg ); //e.g. show this message on warning alert divs.
                 return false;
             }
 
-            let validValue = btcValidationObj.btc_value;
+            let validValue = btcValidationObj.btc_value; //sanitized value 
 
             console.log( validValue );
 
