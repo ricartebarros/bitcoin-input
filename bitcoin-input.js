@@ -1,7 +1,9 @@
 
+//https://github.com/ricartebarros/bitcoin-input
+
 function bitcoinInputFilter(event,input){ //allow only numbers and one dot
     let key = event.which || event.keyCode || 0;
-    if (( (key != 46 || (key == 46 && input.val() == '')) || input.val().indexOf('.') != -1) && (key < 48 || key > 57)) {
+    if (( (key != 46 || (key == 46 && $(input).val() == '')) || $(input).val().indexOf('.') != -1) && (key < 48 || key > 57)) {
         event.preventDefault();
     }
 }
@@ -10,8 +12,12 @@ function setupBitcoinInput(){ //apply restrictions to inputs with btc_input clas
 
     let input = $('.am_btc_input');
 
-    $(input).bind('keypress',function(event){
-        return bitcoinInputFilter(event,input);
+    $(input).each(function(index,obj){
+        (function(index2,obj2){
+            $(obj2).bind('keypress', function (event) {
+                return bitcoinInputFilter(event, obj2);
+            });
+        })(index,obj);
     });
 
     $(input).on('paste', function(event) {
